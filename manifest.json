@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Tweet LDR",
+  "description": "Adds controls to X.com tweets for saving tweet screenshots and downloading tweet videos.",
+  "version": "0.1.0",
+  "permissions": ["activeTab", "downloads", "scripting", "tabs"],
+  "host_permissions": ["<all_urls>", "https://x.com/*", "https://twitter.com/*", "https://tweeload.com/*"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["src/page-hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/styles.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://tweeload.com/*"],
+      "js": ["src/tweeload.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

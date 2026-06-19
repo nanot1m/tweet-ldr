@@ -1,0 +1,94 @@
+.tweet-ldr-controls {
+  align-items: center;
+  display: inline-flex;
+  gap: 4px;
+  margin-left: 2px;
+}
+
+.tweet-ldr-capturing .tweet-ldr-controls {
+  visibility: hidden;
+}
+
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"],
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"] * {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  transition: none !important;
+}
+
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"]:hover,
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"] *:hover,
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"] a:hover,
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"] button:hover,
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"] [role="button"]:hover {
+  background-color: transparent !important;
+}
+
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"]:focus,
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"] *:focus,
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"] a:focus,
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"] button:focus,
+.tweet-ldr-capturing [data-tweet-ldr-capture-target="true"] [role="button"]:focus {
+  background-color: transparent !important;
+}
+
+.tweet-ldr-button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 999px;
+  color: rgb(113, 118, 123);
+  cursor: pointer;
+  display: inline-flex;
+  height: 34px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 34px;
+}
+
+.tweet-ldr-button:hover {
+  background: rgba(29, 155, 240, 0.1);
+  color: rgb(29, 155, 240);
+}
+
+.tweet-ldr-button:disabled {
+  cursor: progress;
+  opacity: 0.65;
+}
+
+.tweet-ldr-button:disabled:hover {
+  background: transparent;
+  color: rgb(113, 118, 123);
+}
+
+.tweet-ldr-button:focus-visible {
+  outline: 2px solid rgb(29, 155, 240);
+  outline-offset: 2px;
+}
+
+.tweet-ldr-button svg {
+  fill: currentColor;
+  height: 19px;
+  pointer-events: none;
+  width: 19px;
+}
+
+.tweet-ldr-button[data-tweet-ldr-status]::after {
+  background: rgba(15, 20, 25, 0.94);
+  border-radius: 4px;
+  bottom: 38px;
+  color: #fff;
+  content: attr(data-tweet-ldr-status);
+  font: 12px/1.2 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  left: 50%;
+  max-width: 180px;
+  padding: 6px 8px;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 2147483647;
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-labelledby="title desc">
+  <title id="title">Tweet LDR controls</title>
+  <desc id="desc">A compact extension control row showing download video and screenshot actions on a tweet.</desc>
+  <rect width="960" height="360" rx="24" fill="#f6f7f9"/>
+  <rect x="70" y="62" width="820" height="236" rx="22" fill="#fff" stroke="#d8dee7"/>
+  <circle cx="126" cy="124" r="31" fill="#1d2b53"/>
+  <rect x="176" y="96" width="230" height="22" rx="11" fill="#111418"/>
+  <rect x="176" y="134" width="560" height="20" rx="10" fill="#536471"/>
+  <rect x="176" y="180" width="612" height="68" rx="14" fill="#e9edf2"/>
+  <g transform="translate(575 255)">
+    <circle cx="0" cy="0" r="28" fill="#e8f5fe"/>
+    <path d="M-11-14h21a7 7 0 017 7v2l9-6v22l-9-6v2a7 7 0 01-7 7h-21a7 7 0 01-7-7V-7a7 7 0 017-7Z" fill="#0f8fd8"/>
+  </g>
+  <g transform="translate(652 255)">
+    <circle cx="0" cy="0" r="28" fill="#e8f5fe"/>
+    <path d="M-17-9h9l4-6h8l4 6h9a7 7 0 017 7v16a7 7 0 01-7 7h-34a7 7 0 01-7-7V-2a7 7 0 017-7Zm17 8a10 10 0 100 20 10 10 0 000-20Z" fill="#0f8fd8"/>
+  </g>
+  <text x="70" y="332" fill="#5f6b7a" font-family="Inter, Arial, sans-serif" font-size="18">Injected controls stay hidden during screenshot export.</text>
+</svg>

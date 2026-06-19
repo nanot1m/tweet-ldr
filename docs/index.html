@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tweet LDR adds compact controls to X/Twitter posts for downloading videos and saving polished tweet screenshots.">
+    <title>Tweet LDR</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Tweet LDR home">
+        <span class="brand-mark">TL</span>
+        <span>Tweet LDR</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="https://github.com/nanot1m/tweet-ldr">GitHub</a>
+        <a href="#install">Install</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Chrome extension for X/Twitter</p>
+          <h1>Save tweet videos and beautiful screenshots without leaving the timeline.</h1>
+          <p class="lede">Tweet LDR adds quiet in-tweet controls for downloading videos when a valid MP4 is available, opening Tweeload as a fallback, or exporting a rounded transparent PNG screenshot.</p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/nanot1m/tweet-ldr">View on GitHub</a>
+            <a class="button secondary" href="#install">Install locally</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-label="Example tweet screenshot export">
+          <img src="assets/tweet-card.svg" alt="A styled tweet screenshot with rounded corners and a soft shadow">
+        </div>
+      </section>
+
+      <section class="feature-grid" aria-label="Features">
+        <article>
+          <h2>Fast MP4 path</h2>
+          <p>Uses direct video URLs and captured X API media variants before trying slower fallbacks.</p>
+        </article>
+        <article>
+          <h2>Tweeload fallback</h2>
+          <p>Opens Tweeload with the tweet URL for public posts when X does not expose a usable MP4.</p>
+        </article>
+        <article>
+          <h2>Styled screenshots</h2>
+          <p>Exports transparent PNG cards with rounded corners, shadow, and hidden extension UI.</p>
+        </article>
+      </section>
+
+      <section class="controls-preview" aria-label="Injected extension controls">
+        <div>
+          <p class="eyebrow">Timeline controls</p>
+          <h2>Small buttons, no screenshot artifacts</h2>
+          <p>Controls are injected into the tweet action row, then hidden during capture so exported images stay clean.</p>
+        </div>
+        <img src="assets/extension-controls.svg" alt="A compact Tweet LDR control preview">
+      </section>
+
+      <section id="install" class="install">
+        <div>
+          <p class="eyebrow">Install</p>
+          <h2>Load it as an unpacked extension</h2>
+        </div>
+        <ol>
+          <li>Clone or download the repository.</li>
+          <li>Open <code>chrome://extensions</code>.</li>
+          <li>Enable <strong>Developer mode</strong>.</li>
+          <li>Click <strong>Load unpacked</strong> and select the project folder.</li>
+          <li>Refresh <code>x.com</code>.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <span>Tweet LDR</span>
+      <a href="https://github.com/nanot1m/tweet-ldr">Source code</a>
+    </footer>
+  </body>
+</html>
