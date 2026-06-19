@@ -62,7 +62,9 @@ nav {
 
 .hero {
   align-items: center;
-  display: flex;
+  display: grid;
+  gap: 44px;
+  grid-template-columns: minmax(0, 0.86fr) minmax(340px, 1.14fr);
   margin: 0 auto;
   max-width: 1180px;
   min-height: calc(100vh - 96px);
@@ -103,6 +105,16 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.hero-media {
+  min-width: 0;
+}
+
+.hero-media img {
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 .button {
@@ -194,6 +206,10 @@ footer {
   .site-header {
     align-items: flex-start;
     gap: 18px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
   }
 
   .install {

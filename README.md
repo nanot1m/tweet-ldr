@@ -5,6 +5,8 @@ Tweet LDR is a lightweight Chrome extension for saving useful media from X/Twitt
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Manifest%20V3-1a73e8?style=for-the-badge&logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3)
 [![GitHub Pages](https://img.shields.io/badge/Landing%20Page-GitHub%20Pages-24292f?style=for-the-badge&logo=github&logoColor=white)](https://nanot1m.github.io/tweet-ldr/)
 
+![Tweet LDR screenshot export](assets/screenshots/tweet-2066965242488254725.png)
+
 ## Features
 
 - Adds video and screenshot buttons to tweets on `x.com` and `twitter.com`.
@@ -54,6 +56,7 @@ src/background.js      Downloads, tab capture, and tab-opening bridge
 src/tweeload.js        Tweeload form autofill helper
 src/styles.css         Injected tweet controls and capture cleanup styles
 docs/                  GitHub Pages landing page
+assets/screenshots/    README screenshots
 ```
 
 ## Legal
