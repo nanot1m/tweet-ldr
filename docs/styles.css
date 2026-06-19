@@ -62,9 +62,7 @@ nav {
 
 .hero {
   align-items: center;
-  display: grid;
-  gap: 42px;
-  grid-template-columns: minmax(0, 0.85fr) minmax(340px, 1.15fr);
+  display: flex;
   margin: 0 auto;
   max-width: 1180px;
   min-height: calc(100vh - 96px);
@@ -126,16 +124,6 @@ h1 {
   color: var(--text);
 }
 
-.hero-media {
-  min-width: 0;
-}
-
-.hero-media img {
-  display: block;
-  height: auto;
-  width: 100%;
-}
-
 .feature-grid {
   display: grid;
   gap: 18px;
@@ -143,23 +131,6 @@ h1 {
   margin: 0 auto;
   max-width: 1180px;
   padding: 0 24px 72px;
-}
-
-.controls-preview {
-  align-items: center;
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 30px;
-  grid-template-columns: 0.8fr 1.2fr;
-  margin: 0 auto;
-  max-width: 1180px;
-  padding: 56px 24px;
-}
-
-.controls-preview img {
-  display: block;
-  height: auto;
-  width: 100%;
 }
 
 .feature-grid article {
@@ -225,8 +196,6 @@ footer {
     gap: 18px;
   }
 
-  .hero,
-  .controls-preview,
   .install {
     grid-template-columns: 1fr;
   }
