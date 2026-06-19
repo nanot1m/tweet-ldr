@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Tweet LDR">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f8fd8"/>
+      <stop offset="1" stop-color="#095f96"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="27" fill="url(#bg)"/>
+  <path d="M59 29h10v31h12L64 72 47 60h12Z" fill="#fff"/>
+  <path d="M30 69h68v23H30Zm8 7v9h40v-9Zm52-3a7 7 0 1 0 0 14 7 7 0 0 0 0-14ZM43 91h42v10H43Z" fill="#fff"/>
+</svg>

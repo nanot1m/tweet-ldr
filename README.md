@@ -50,6 +50,7 @@ For screenshots, it captures the visible tab, crops to the tweet bounds, and ren
 
 ```text
 manifest.json          Chrome extension manifest
+icons/                 Extension icon PNGs
 src/content.js         X/Twitter content script and screenshot/video logic
 src/page-hook.js       Main-world hook for X API response media URLs
 src/background.js      Downloads, tab capture, and tab-opening bridge
