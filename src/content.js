@@ -238,26 +238,80 @@ async function openTweetInTweeload(tweet) {
 }
 
 function getTweetPermalink(tweet) {
-  const time = tweet.querySelector("time");
-  const link = time && time.closest("a");
-  if (!link || !link.href) {
+  const statusId = getTweetStatusId(tweet);
+  const username = getTweetUsername(tweet, statusId);
+  if (!username || !statusId) {
     return null;
   }
 
-  try {
-    const url = new URL(link.href);
-    const parts = url.pathname.split("/").filter(Boolean);
-    const username = parts[0];
-    const statusIndex = parts.indexOf("status");
-    const statusId = statusIndex >= 0 ? parts[statusIndex + 1] : null;
-    if (!username || !statusId) {
-      return null;
-    }
+  return `https://x.com/${username}/status/${statusId}`;
+}
 
-    return `https://x.com/${username}/status/${statusId}`;
+function getTweetStatusId(tweet) {
+  const time = tweet.querySelector("time");
+  const timeLink = time && time.closest("a[href]");
+  const timeStatusId = timeLink && extractStatusId(timeLink.href);
+  if (timeStatusId) {
+    return timeStatusId;
+  }
+
+  const links = getTweetLinks(tweet);
+  for (const link of links) {
+    const statusId = extractStatusId(link.href);
+    if (statusId) {
+      return statusId;
+    }
+  }
+
+  return null;
+}
+
+function getTweetUsername(tweet, statusId) {
+  const links = getTweetLinks(tweet);
+  for (const link of links) {
+    const username = extractUsernameFromStatusUrl(link.href, statusId);
+    if (username) {
+      return username;
+    }
+  }
+
+  const userNameBlock = tweet.querySelector('[data-testid="User-Name"]');
+  const handleText = userNameBlock && userNameBlock.textContent;
+  const handle = handleText && handleText.match(/@([A-Za-z0-9_]{1,15})/);
+  return handle ? handle[1] : null;
+}
+
+function getTweetLinks(tweet) {
+  return Array.from(tweet.querySelectorAll("a[href]"));
+}
+
+function extractStatusId(href) {
+  try {
+    const url = new URL(href);
+    return (url.pathname.match(/\/status\/(\d+)/) || [])[1] || null;
   } catch {
     return null;
   }
+}
+
+function extractUsernameFromStatusUrl(href, statusId) {
+  try {
+    const url = new URL(href);
+    const parts = url.pathname.split("/").filter(Boolean);
+    const statusIndex = parts.indexOf("status");
+    if (statusIndex < 1 || parts[statusIndex + 1] !== statusId) {
+      return null;
+    }
+
+    const username = parts[statusIndex - 1];
+    return isPublicXUsername(username) ? username : null;
+  } catch {
+    return null;
+  }
+}
+
+function isPublicXUsername(username) {
+  return /^[A-Za-z0-9_]{1,15}$/.test(username) && !["i", "intent", "share"].includes(username);
 }
 
 function getTweetMediaId(tweet, video) {
