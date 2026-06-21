@@ -18,7 +18,7 @@
       "128": "icons/icon-128.png"
     }
   },
-  "permissions": ["activeTab", "downloads", "scripting", "tabs"],
+  "permissions": ["activeTab", "clipboardWrite", "downloads", "scripting", "tabs"],
   "host_permissions": ["<all_urls>", "https://x.com/*", "https://twitter.com/*", "https://tweeload.com/*"],
   "background": {
     "service_worker": "src/background.js"

@@ -71,7 +71,7 @@ function createControls(tweet) {
     });
   });
 
-  const screenshotButton = createButton("Save tweet screenshot", cameraIcon());
+  const screenshotButton = createButton("Copy tweet screenshot", cameraIcon());
   screenshotButton.addEventListener("click", (event) => {
     event.stopPropagation();
     saveTweetScreenshot(tweet, screenshotButton).catch(() => {
@@ -503,8 +503,31 @@ async function saveTweetScreenshot(tweet, button) {
   }
 
   const dataUrl = await cropCaptureToTweet(capture.dataUrl, tweet);
-  await requestDownload(dataUrl, `${tweetFileBase(tweet)}.png`, true);
-  flashButton(button, "Saved");
+  const didCopy = await copyPngDataUrlToClipboard(dataUrl);
+  flashButton(button, didCopy ? "Copied" : "Copy failed");
+}
+
+async function copyPngDataUrlToClipboard(dataUrl) {
+  if (!navigator.clipboard || !window.ClipboardItem) {
+    return false;
+  }
+
+  try {
+    const blob = await dataUrlToBlob(dataUrl);
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        [blob.type || "image/png"]: blob,
+      }),
+    ]);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function dataUrlToBlob(dataUrl) {
+  const response = await fetch(dataUrl);
+  return response.blob();
 }
 
 function waitForPaint() {
